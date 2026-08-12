@@ -4,30 +4,33 @@ AI-based cybersecurity project for detecting suspicious activity in network or l
 
 ## Overview
 
-This project explores how artificial intelligence can support cybersecurity teams by identifying unusual or potentially malicious activity in log or network traffic data.
+This project explores how artificial intelligence can support cybersecurity teams by identifying unusual or potentially malicious activity in network traffic data.
 
 The goal is to build a simple machine learning pipeline that can process cybersecurity-related data, detect suspicious patterns, and present the results in a clear way for security analysts.
 
 ## Why This Project
 
-Cybersecurity teams often deal with a large number of alerts, logs, and events. AI can help by filtering large amounts of data, detecting anomalies, and highlighting activity that may require human investigation.
+Cybersecurity teams often deal with a large number of alerts, logs, and network events. AI can help by filtering large amounts of data, detecting anomalies, and highlighting activity that may require human investigation.
 
 This project is focused on:
 
 - AI-driven threat detection
-- Anomaly detection
+- Network intrusion detection
+- Suspicious activity classification
 - SOC automation
 - Cyber resilience
 - Machine learning for cybersecurity
 
-## Planned Features
+## Project Workflow
 
-- Load and clean cybersecurity-related data
-- Perform basic data analysis
-- Train a machine learning model
-- Detect suspicious or abnormal activity
-- Generate simple alert outputs
-- Create a short report or dashboard showing the results
+The project follows a simple AI-based cybersecurity workflow:
+
+1. Load a public network intrusion detection dataset
+2. Explore and understand the data
+3. Convert attack labels into a binary classification problem
+4. Train a machine learning model
+5. Evaluate model performance
+6. Convert model predictions into SOC-style alert summaries
 
 ## Current Progress
 
@@ -39,24 +42,42 @@ The project currently includes:
   - `1` = suspicious or malicious activity
 - Machine learning model training using Random Forest
 - Model evaluation using accuracy, classification report, and confusion matrix
+- SOC-style alert summary generation from model predictions
 
 ## Notebooks
 
-- `01_data_exploration.ipynb`  
-  Explores the cybersecurity dataset and prepares the binary target label.
+### 01_data_exploration.ipynb
 
-- `02_model_training.ipynb`  
-  Trains a machine learning model to classify network activity as normal or suspicious.
+Explores the cybersecurity dataset and prepares the binary target label.
+
+### 02_model_training.ipynb
+
+Trains a Random Forest machine learning model to classify network activity as normal or suspicious.
+
+### 03_alert_summary.ipynb
+
+Converts model predictions into simple human-readable SOC-style alert summaries.
+
+Example alert:
+
+```text
+Alert: Suspicious network activity detected.
+Severity: High
+Model confidence: 1.00
+Recommended action: Immediate investigation recommended.
+```
 
 ## Initial Result
 
+The first Random Forest model achieved the following result on the test dataset:
+
+```text
 Accuracy: 0.9994
+```
 
-The first Random Forest model achieved strong classification performance on the test dataset.
+This result shows that machine learning can identify patterns associated with suspicious network activity in a controlled public dataset.
 
-This result shows that machine learning can be used to identify patterns associated with suspicious network activity in a controlled dataset.
-
-Further improvements will focus on explainability, anomaly detection, and SOC-style alert summaries.
+This is an early portfolio project and not a production-ready cybersecurity system. Future work will focus on explainability, anomaly detection, attack type classification, and more realistic SOC-style workflows.
 
 ## Technologies
 
@@ -65,7 +86,19 @@ Further improvements will focus on explainability, anomaly detection, and SOC-st
 - NumPy
 - Scikit-learn
 - Matplotlib
-- Jupyter Notebook
+- Jupyter Notebook / Google Colab
+
+## Future Improvements
+
+Planned improvements include:
+
+- Model explainability
+- Feature importance analysis
+- Attack type classification
+- Better risk scoring
+- LLM-based alert summarization
+- Dashboard integration
+- Industrial / OT cybersecurity use cases
 
 ## Project Status
 
