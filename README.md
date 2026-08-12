@@ -29,6 +29,35 @@ This project is focused on:
 - Generate simple alert outputs
 - Create a short report or dashboard showing the results
 
+## Current Progress
+
+The project currently includes:
+
+- Initial data exploration using a public network intrusion dataset
+- Binary classification setup:
+  - `0` = normal network activity
+  - `1` = suspicious or malicious activity
+- Machine learning model training using Random Forest
+- Model evaluation using accuracy, classification report, and confusion matrix
+
+## Notebooks
+
+- `01_data_exploration.ipynb`  
+  Explores the cybersecurity dataset and prepares the binary target label.
+
+- `02_model_training.ipynb`  
+  Trains a machine learning model to classify network activity as normal or suspicious.
+
+## Initial Result
+
+Accuracy: 0.9994
+
+The first Random Forest model achieved strong classification performance on the test dataset.
+
+This result shows that machine learning can be used to identify patterns associated with suspicious network activity in a controlled dataset.
+
+Further improvements will focus on explainability, anomaly detection, and SOC-style alert summaries.
+
 ## Technologies
 
 - Python
